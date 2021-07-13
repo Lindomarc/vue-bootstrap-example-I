@@ -1,8 +1,12 @@
-# vue-bootstrap4
+# Introduction to Bootstrap With Vue - Full App
+
+Tutorial: https://www.youtube.com/watch?v=-DyKeMa5tYY
 
 <p align="center">
     <img src="https://imgur.com/xHzMPjw.png">
 </p>
+
+
 
 ## Project setup
 ```
