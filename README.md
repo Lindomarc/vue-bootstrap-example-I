@@ -1,6 +1,11 @@
 # Introduction to Bootstrap With Vue - Full App
 
 Tutorial: https://www.youtube.com/watch?v=-DyKeMa5tYY
+        
+- [Introduction to Bootstrap With Vue - Vuex Refactor](https://www.youtube.com/watch?v=G2krb6FaZco) 
+    <p>- Paginate</p>
+    
+
 
 <p align="center">
     <img src="https://imgur.com/xHzMPjw.png">

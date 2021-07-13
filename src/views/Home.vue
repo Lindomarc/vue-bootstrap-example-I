@@ -22,14 +22,11 @@
 <script>
 // @ is an alias to /src
 import JobCard from "@/components/JobCard.vue";
-
+import { mapGetters } from "vuex";
 export default {
   name: "Home",
   data(){
     return {
-      jobs:[],
-      displayJobs:[],
-      rows: 1,
       currentPage:1,
       perPage: 3
     }
@@ -37,21 +34,18 @@ export default {
   components: {
      "job-card": JobCard  
   },
+  computed:{
+    ...mapGetters(["jobs", "displayJobs", "rows"])
+  },
   mounted() {
     this.fetchData();
   },
   methods:{
     async fetchData(){
-      const res = await fetch("jobs.json");
-      const val = await res.json();
-      this.jobs = val;
-      this.displayJobs = val.slice(0,3);
-      this.rows = val.length
-      
+      await this.$store.dispatch("fetchJobs");
     },
     paginate(currentPage){
-      const start = (currentPage - 1) * this.perPage;
-      this.displayJobs = this.jobs.slice(start,  start+3)
+      this.$store.dispatch("paginate", { currentPage, perPage: this.perPage });
     }
   }
 };
