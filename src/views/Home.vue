@@ -25,17 +25,17 @@ import JobCard from "@/components/JobCard.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "Home",
-  data(){
+  data() {
     return {
       currentPage:1,
-      perPage: 3
-    }
+      perPage: 3,
+    };
   },
   components: {
-     "job-card": JobCard  
+    "job-card": JobCard,
   },
-  computed:{
-    ...mapGetters(["jobs", "displayJobs", "rows"])
+  computed: {
+    ...mapGetters(["jobs", "displayJobs", "rows"]),
   },
   mounted() {
     this.fetchData();
