@@ -1,12 +1,14 @@
 <template>
-<b-container class="bv-example-row">
-  
-  <b-row align-v="center">
-
-    <job-card v-for="job in displayJobs" :key="job.id" :name="job.name"></job-card>
-   
-  </b-row>
-  <b-pagination
+  <b-container class="bv-example-row">
+    <b-row align-v="center">
+      <job-card
+        v-for="job in displayJobs"
+        :key="job.id"
+        :name="job.name"
+        :id="job.id"
+      ></job-card>
+    </b-row>
+    <b-pagination
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
@@ -15,8 +17,8 @@
       next-text="Next"
       last-text="Last"
       @input="paginate(currentPage)"
-  ></b-pagination>
-</b-container>
+    ></b-pagination>
+  </b-container>
 </template>
 
 <script>
@@ -27,7 +29,7 @@ export default {
   name: "Home",
   data() {
     return {
-      currentPage:1,
+      currentPage: 1,
       perPage: 3,
     };
   },
@@ -40,13 +42,13 @@ export default {
   mounted() {
     this.fetchData();
   },
-  methods:{
-    async fetchData(){
+  methods: {
+    async fetchData() {
       await this.$store.dispatch("fetchJobs");
     },
-    paginate(currentPage){
+    paginate(currentPage) {
       this.$store.dispatch("paginate", { currentPage, perPage: this.perPage });
-    }
-  }
+    },
+  },
 };
 </script>
