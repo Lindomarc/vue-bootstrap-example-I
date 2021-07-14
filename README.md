@@ -6,6 +6,7 @@ Tutorial: https://www.youtube.com/watch?v=-DyKeMa5tYY
     <p>- Paginate</p>
     <p>- Search</p>
     <p>- Spinner</p>
+    <p>- Modal</p>
     
 
 
